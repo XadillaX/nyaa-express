@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get("/api/query/:company/", api.query);
 app.get("/api/query/:company/:number", api.query);
 
 http.createServer(app).listen(app.get('port'), function(){

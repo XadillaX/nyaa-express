@@ -9,7 +9,23 @@ exports.query = function(req, res){
     var company = params["company"];
     var number = params["number"];
 
+    if(number === undefined) {
+        var result = {
+            "status"        : false,
+            "msg"           : "请输入运猫号。",
+            "data"          : []
+        };
+
+        var resultString = JSON.stringify(result);
+
+        res.write(resultString);
+        res.end();
+        return;
+    }
+
     xto.query(number, company, function(status, msg, data){
+        data["stateText"] = xto.stateToText(data["state"]);
+
         var result = {
             "status"        : status,
             "msg"           : msg,

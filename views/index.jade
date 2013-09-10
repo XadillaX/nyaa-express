@@ -1,40 +1,66 @@
 extends header
 
 block content
-    div(class="row", style="text-align: center;", id="logo-div")
-        img(src="images/xiaohei.png")
+    div(class="container")
+        div(class="row", style="text-align: center;", id="logo-div")
+            img(src="images/xiaohei.png")
 
-    div(class="row")
-        div(class="col-lg-4")
-        div(class="col-lg-4" id="main-form")
-            div(class="input-group input-group-lg")
-                // 左边按钮
-                div(class="input-group-btn")
-                    button(type="button", class="btn btn-default dropdown-toggle" data-toggle="dropdown")
-                        span(id="current-company") 顺丰&nbsp;
-                        span(class="caret")
-                    ul(class="dropdown-menu", id="choose-company")
-                        li
-                            a(href="#", name="shunfeng") 顺丰
-                        li
-                            a(href="#", name="shentong") 申通
-                        li
-                            a(href="#", name="yuantong") 圆通
-                        li
-                            a(href="#", name="guotongkuaidi") 国通
-                        li
-                            a(href="#", name="yunda") 韵达
-                        li
-                            a(href="#", name="tiantian") 天天
+        div(class="row")
+            div(class="col-md-3")
+            div(class="col-md-6" id="main-form")
+                div(class="input-group input-group-lg")
+                    // 左边按钮
+                    div(class="input-group-btn")
+                        button(type="button", class="btn btn-default dropdown-toggle" data-toggle="dropdown")
+                            span(id="current-company") 顺丰&nbsp;
+                            span(class="caret")
+                        ul(class="dropdown-menu", id="choose-company")
+                            li
+                                a(href="#", name="guotongkuaidi") 国通
+                            li
+                                a(href="#", name="shentong") 申通
+                            li
+                                a(href="#", name="shunfeng") 顺丰
+                            li
+                                a(href="#", name="tiantian") 天天
+                            li
+                                a(href="#", name="yuantong") 圆通
+                            li
+                                a(href="#", name="yunda") 韵达
+                            li
+                                a(href="#", name="zhongtong") 中通
 
+                    //输入框
+                    input(type="text", class="form-control", placeholder="请输入运猫号...", id="number")
 
-                //输入框
-                input(type="text", class="form-control", placeholder="请输入运猫号...", id="number")
+                    // 右边按钮
+                    div(class="input-group-btn")
+                        button(type="button", class="btn btn-default", id="query-button") (//∇//) 偷窥
 
-                // 右边按钮
-                div(class="input-group-btn")
-                    button(type="button", class="btn btn-default", id="query-button") (//∇//) 偷窥
-        div(class="col-lg-4")
+                div(style="text-align: center;")
+                    small
+                        a(href="javascript:void(0);", id="all-companies") 所有快递
+
+            div(class="col-md-3")
+
+        div(class="row", id="result-panel")
+            div(class="col-md-3")
+            div(class="col-md-6")
+                div(class="panel panel-info")
+                    div(class="panel-heading") 喵，看一下吧~
+                    div(class="panel-body")
+                        b 物流状态：
+                        span(id="miao-status")
+
+                        div(id="miao-wrong-sign")
+                        div(class="alert alert-danger alert-dismissable", id="miao-wrong")
+                            button(type="button", class="close", data-dismiss="alert", aria-hidden="true") &times;
+                            strong 错误信息：
+                            span(id="miao-wrong-text")
+
+                        div(id="table-wrapper")
+
+            div(class="col-md-3")
 
     script(type="text/javascript")
         var company = "shunfeng";
@@ -46,3 +72,20 @@ block content
         });
 
     script(type="text/javascript", src="js/miao~o~~.js")
+
+    div(id="footer")
+        div(id="bottom-tip")
+            喜欢我就“喵”一下～ ~(=^･ω･^)ﾉ☆
+
+        div(id="bottom-nav")
+            a(href="#") 帮助
+            &nbsp;|&nbsp;
+            a(href="#") 关于
+            &nbsp;|&nbsp;
+            a(href="http://kacaka.ca", target="_blank") About ZSG
+            &nbsp;|&nbsp;
+            a(href="https://github.com/XadillaX/xtodemo", target="_blank") 项目主页
+            &nbsp;|&nbsp;
+            a(href="#") 开放API
+
+        small &copy;2013 XadillaX

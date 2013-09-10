@@ -18,4 +18,53 @@ body {
     filter: alpha(opacity=80);
     -moz-opacity: 0.8;
     opacity: 0.8;
+
+    z-index: 100;
+}
+
+#result-panel .panel {
+    z-index: -1;
+    margin-top: 15px;
+
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+#miao-wrong {
+    margin-top: 8px;
+    display: none;
+}
+
+#result-panel {
+    display: none;
+    margin-bottom: 130px;
+}
+
+#footer {
+    background: rgba(0,0,0,0.5);
+    background: black	9;
+    filter: alpha(opacity=70) 9;
+
+    margin: 50px auto 0 auto;
+    font-family: arial;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    text-align: center;
+    color: #fff;
+}
+
+#footer a { color: #fff; }
+
+#bottom-tip {
+    padding: 18px 0 15px 0;
+}
+
+#bottom-nav {
+    padding-bottom: 9px;
 }
