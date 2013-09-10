@@ -1,0 +1,21 @@
+body {
+    overflow-x: hidden;
+}
+
+.navbar {
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+#logo-div {
+    margin-top: 100px;
+}
+
+#main-form {
+    margin-top: 10px;
+
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}

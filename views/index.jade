@@ -1,5 +1,48 @@
-extends layout
+extends header
 
 block content
-  h1= title
-  p Welcome to #{title}
+    div(class="row", style="text-align: center;", id="logo-div")
+        img(src="images/xiaohei.png")
+
+    div(class="row")
+        div(class="col-lg-4")
+        div(class="col-lg-4" id="main-form")
+            div(class="input-group input-group-lg")
+                // 左边按钮
+                div(class="input-group-btn")
+                    button(type="button", class="btn btn-default dropdown-toggle" data-toggle="dropdown")
+                        span(id="current-company") 顺丰&nbsp;
+                        span(class="caret")
+                    ul(class="dropdown-menu", id="choose-company")
+                        li
+                            a(href="#", name="shunfeng") 顺丰
+                        li
+                            a(href="#", name="shentong") 申通
+                        li
+                            a(href="#", name="yuantong") 圆通
+                        li
+                            a(href="#", name="guotongkuaidi") 国通
+                        li
+                            a(href="#", name="yunda") 韵达
+                        li
+                            a(href="#", name="tiantian") 天天
+
+
+                //输入框
+                input(type="text", class="form-control", placeholder="请输入运猫号...", id="number")
+
+                // 右边按钮
+                div(class="input-group-btn")
+                    button(type="button", class="btn btn-default", id="query-button") (//∇//) 偷窥
+        div(class="col-lg-4")
+
+    script(type="text/javascript")
+        var company = "shunfeng";
+        $(function(){
+            $("#choose-company li").click(function(){
+                $("#current-company").html($(this).find("a").html() + " ");
+                company = $(this).find("a").attr("name");
+            });
+        });
+
+    script(type="text/javascript", src="js/miao~o~~.js")

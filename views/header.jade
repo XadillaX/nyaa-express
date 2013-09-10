@@ -1,0 +1,34 @@
+doctype 5
+html(lang="zh-CN")
+    head
+        title= title
+        link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", href="bootstrap/css/bootstrap-theme.min.css")
+        link(rel='stylesheet', href='css/style.css')
+
+        script(type="text/javascript", src="js/jquery-2.0.3.min.js")
+        script(type="text/javascript", src="js/jquery.backstretch.min.js")
+
+        script(type="text/javascript", src="bootstrap/js/bootstrap.min.js")
+
+        // Background
+        script(type="text/javascript")
+            $(function(){
+                $.backstretch("images/moe.jpg");
+            });
+    body
+        nav(class="navbar navbar-default" role="banner")
+            div(class="container")
+                div(class="navbar-header")
+                    a(class="navbar-brand" href="#")= title
+                div(class="collapse navbar-collapse bs-navbar-collapse" role="navigation")
+                    p(class="navbar-text pull-right") 喵一下就能偷窥快递的站子！
+
+                    ul(class="nav navbar-nav")
+                        li(class="active")
+                            a(href="#") 首页
+                        li
+                            a(href="#") 帮助
+                        li
+                            a(href="#") 关于
+        block content
