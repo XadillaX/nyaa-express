@@ -4,7 +4,7 @@
  * @param res
  */
 var xto = require("xto");
-exports.query = function(req, res){
+exports.query = function(req, res) {
     var params = req["params"];
     var company = params["company"];
     var number = params["number"];
@@ -36,4 +36,12 @@ exports.query = function(req, res){
         res.write(resultString);
         res.end();
     });
+};
+
+exports.companyInfo = function(req, res) {
+    var info = require("xto/lib/namemapper");
+    var str = JSON.stringify(info);
+
+    res.write(str);
+    res.end();
 };

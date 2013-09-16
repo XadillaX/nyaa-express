@@ -1,0 +1,12 @@
+div(class="modal fade", id="all-express-modal")
+    div(class="modal-dialog")
+        div(class="modal-content")
+            div(class="modal-header")
+                button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
+                h4(class="modal-title") 所有快递
+
+            div(class="modal-body")
+                each val in company
+                    a(class="label label-info", href="javascript:void(0);", style="margin-right: 10px; display: inline-block;", code= val.code)= val.shortname
+
+script(type="text/javascript", src="js/miao~o~~all-express.js")
