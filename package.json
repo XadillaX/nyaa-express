@@ -8,7 +8,7 @@
   "dependencies": {
     "express": "3.4.0",
     "jade": "*",
-    "xto": "0.0.4",
+    "xto": "0.0.5",
     "sugar": "~1.4.1",
     "pinyin": "~2.3.2"
   },
