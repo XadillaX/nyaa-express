@@ -1,20 +1,20 @@
 {
-  "name": "myxto",
+  "name": "nyaa-express",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.0",
+    "express": "^3.4.0",
+    "han": "^0.0.7",
     "jade": "*",
-    "xto": "0.0.5-fix2",
-    "sugar": "~1.4.1",
-    "pinyin": "~2.3.2"
+    "sugar": "^1.4.1",
+    "xto": "^1.0.0"
   },
-  "description": "ERROR: No README data found!",
+  "description": "Nyaa express!",
   "main": "app.js",
   "devDependencies": {},
   "author": "",
-  "license": "BSD-2-Clause"
+  "license": "GPLv2"
 }
