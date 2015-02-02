@@ -1,24 +1,18 @@
+require("sugar");
+var pinyin = require("han");
+
+var companies = Object.clone(require("xto").companies, true).sortBy(function(e) {
+    e.shortname = e.shortname.capitalize();
+    var py = pinyin.letter(e.shortname, "-");
+    return py;
+});
+
 /**
- * 首页
- * @param req
- * @param res
+ * index
+ * @param {Request} req the request object
+ * @param {Response} resp the response object
  */
-var sugar = require("sugar");
-var pinyin = require("pinyin");
-
-exports.index = function(req, res){
-    var compines = Object.clone(require("xto/lib/namemapper"), true);
-    compines = compines.sortBy(function(e) {
-        if(e.shortname === "auspost") e.shortname = "Auspost";
-        var py = pinyin(e.shortname);
-
-        var string = "";
-        for(var i = 0; i < py.length; i++) {
-            string += py[i][0];
-            for(var j = 0; j < 20 - py[i][0].length; j++) string += " ";
-        }
-        return string;
-    });
-
-    res.render("index", { title : '(〃ノ∇ノ) 快递喵', company : compines });
+exports.index = function(req, resp){
+    resp.render("index", { title : "(〃ノ∇ノ) 快递喵", company : companies });
 };
+
