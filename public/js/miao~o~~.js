@@ -1,6 +1,8 @@
 var apiurl = "api/query";
 var querying = false;
 
+if(0) var $, company;
+
 function initQuery() {
     querying = true;
 
@@ -30,17 +32,16 @@ function toQuery() {
     $.get(url, {}, function(e){
         var json;
         try {
-            json = JSON.parse(e);
+            json = typeof e === "object" ? e : JSON.parse(e);
         } catch(newe) {
             $("#miao-status").html("获取错误");
             $("#miao-wrong-text").html("服务器错误，请稍后再试。");
             $("#miao-wrong").slideDown("normal");
             querying = false;
-
             return;
         }
 
-        if(json.status === false) {
+        if(!json.status) {
             var status = "";
             if("请输入运猫号。" === json.msg) status = "输入错误";
             else status = "查询错误";
@@ -63,7 +64,7 @@ function toQuery() {
         table += "<th width='30%'>时间</th>";
         table += "<th width='70%'>状态</th>";
         table += "</tr></thead>";
-        table += "<tbody>"
+        table += "<tbody>";
 
         for(var i = 0; i < json.data.data.length; i++) {
             table += "<tr" + (i === 0 ? " class='success'" : "") + ">";
@@ -92,3 +93,4 @@ $(function(){
         }
     });
 });
+

@@ -1,4 +1,6 @@
-function refreshCompanyLabel(name) {
+if(0) var $, company;
+
+function refreshCompanyLabel() {
     $("#all-express-modal .modal-body").find("a").removeClass("label-danger").addClass("label-info");
     $("#all-express-modal .modal-body").find("a[code=" + company + "]").removeClass("label-info").addClass("label-danger");
 }
@@ -17,3 +19,4 @@ $(function(){
         $("#all-express-modal").modal("hide");
     });
 });
+
