@@ -10,7 +10,7 @@
     "han": "^0.0.7",
     "jade": "*",
     "sugar": "^1.4.1",
-    "xto": "^1.0.0"
+    "xto": "^1.1.5"
   },
   "description": "Nyaa express!",
   "main": "app.js",
