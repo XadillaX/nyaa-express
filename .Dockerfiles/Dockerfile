@@ -8,9 +8,9 @@ WORKDIR /var/nyaa_express
 RUN source $TNVM_DIR/tnvm.sh &&\
         npm install
 RUN source $TNVM_DIR/tnvm.sh &&\
-        npm install -g pm2
+        npm install -g nodemon
 
 ENV PORT 80
 
 EXPOSE 80
-CMD [ "pm2", "start", "app.js" ]
+CMD [ "nodemon", "app.js" ]
