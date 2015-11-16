@@ -4,6 +4,8 @@ MAINTAINER XadillaX
 
 RUN git clone https://github.com/XadillaX/nyaa-express.git /var/nyaa_express
 WORKDIR /var/nyaa_express
+RUN git checkout master &&\
+        git pull
 
 RUN source $TNVM_DIR/tnvm.sh &&\
         npm install
