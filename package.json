@@ -3,18 +3,22 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "express": "^3.4.0",
     "han": "^0.0.7",
     "jade": "*",
     "sugar": "^1.4.1",
-    "xto": "^1.1.5"
+    "xto": "^1.1.5",
+    "snyk": "^1.316.1"
   },
   "description": "Nyaa express!",
   "main": "app.js",
   "devDependencies": {},
   "author": "XadillaX",
-  "license": "GPLv2"
+  "license": "GPLv2",
+  "snyk": true
 }
