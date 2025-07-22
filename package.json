@@ -6,7 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^3.4.0",
+    "express": "^4.0.0",
     "han": "^0.0.7",
     "jade": "*",
     "sugar": "^1.4.1",
